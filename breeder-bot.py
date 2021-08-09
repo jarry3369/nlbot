@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 from collections import UserList
 import discord
 import json
