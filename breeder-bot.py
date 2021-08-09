@@ -89,7 +89,7 @@ client = discord.Client()
 async def on_ready():
 
     
-    await client.change_presence(status=discord.Status.online, activity=discord.Game("ARK: Survival Evolved"))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game("곰젤리 먹방"))
 
     print('We have logged in as {0.user}'.format(client)) #실행 콘솔로그
 
