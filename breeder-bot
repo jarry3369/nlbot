@@ -8,7 +8,6 @@ from requests.api import request
 from requests.sessions import Request
 
 url = 'https://script.google.com/macros/s/AKfycbwIGjc6merW4KOIh_fQ1hTOLw28nB_B0iRHiWDJG103gBskGHLVIVjb_s_YZIiPfSUW6w/exec?sheetName=request_list'
-token = 'ODc0MjI3NTA4MjA2MjcyNTMz.YRD50A.CAfGsVIlv3kZNUjn3CmBkYhR3ns'
 
 output = requests.get(url).json()
 
@@ -113,5 +112,5 @@ async def on_message(message):
         await message.channel.send("```"+daeodonShow[0]+'\n'+daeodonShow[1]+'\n'+daeodonShow[2]+'\n'+daeodonShow[3]+'\n'+daeodonShow[4]+"```")
         return     
 
-client.run(token)
+client.run(os.environ['token'])
 
