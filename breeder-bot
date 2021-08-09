@@ -8,7 +8,7 @@ from requests.api import request
 from requests.sessions import Request
 
 url = 'https://script.google.com/macros/s/AKfycbwIGjc6merW4KOIh_fQ1hTOLw28nB_B0iRHiWDJG103gBskGHLVIVjb_s_YZIiPfSUW6w/exec?sheetName=request_list'
-token = 'ODc0MjI3NTA4MjA2MjcyNTMz.YRD50A.XS115EOinj7LCm63Beh_Xw23lJ0'
+token = 'ODc0MjI3NTA4MjA2MjcyNTMz.YRD50A.CAfGsVIlv3kZNUjn3CmBkYhR3ns'
 
 output = requests.get(url).json()
 
