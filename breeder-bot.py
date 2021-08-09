@@ -51,7 +51,7 @@ def giga() :
     passNum = 0
     j=0
     for i in range(listlen):
-        if str(output["data"][i][" [Giga/南巨]"]) == '' or 0 or NULL:
+        if str(output["data"][i][" [Giga/南巨]"]) == '' or 0:
             passNum = passNum+1
             continue
         else:
@@ -68,7 +68,7 @@ def daeodon() :
     passNum = 0
     j=0
     for i in range(listlen):
-        if str(output["data"][i][" [Daeodon/回血猪]"]) == '' or 0 or NULL:
+        if str(output["data"][i][" [Daeodon/回血猪]"]) == '' or 0:
             passNum = passNum+1
             continue
         else:
