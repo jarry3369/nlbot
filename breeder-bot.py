@@ -6,6 +6,7 @@ import requests
 from requests.api import request
 from requests.sessions import Request
 import os
+import time
 
 
 url = 'https://script.google.com/macros/s/AKfycbwIGjc6merW4KOIh_fQ1hTOLw28nB_B0iRHiWDJG103gBskGHLVIVjb_s_YZIiPfSUW6w/exec?sheetName=request_list'
@@ -114,4 +115,8 @@ async def on_message(message):
         return     
 
 client.run(os.environ['token'])
+
+while 1:
+	output = requests.get(url).json()
+	time.sleep(60)
 
