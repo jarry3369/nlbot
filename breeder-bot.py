@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 from collections import UserList
 import discord
 import json
@@ -34,7 +33,7 @@ def arthro() :
     passNum = 0
     j=0
     for i in range(listlen):
-        if str(output["data"][i][" [Arthro/古马陆]"]) == '' or 0 or NULL:
+        if str(output["data"][i][" [Arthro/古马陆]"]) == '' or 0:
             passNum = passNum+1
             continue
         else:
