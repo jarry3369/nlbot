@@ -1,3 +1,4 @@
 discord.py
 asyncio
 requests
+asyncio.windows_events
