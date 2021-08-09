@@ -1,1 +1,1 @@
-woker: breeder-bot.py
+woker: python breeder-bot.py
