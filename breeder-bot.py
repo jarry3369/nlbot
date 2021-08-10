@@ -13,7 +13,7 @@ url = 'https://script.google.com/macros/s/AKfycbwIGjc6merW4KOIh_fQ1hTOLw28nB_B0i
 global passNum
 global j
 
-
+showList = [0] * 100
 howmany = [0] * 100
 
 
@@ -21,16 +21,12 @@ arthroReq = dict()
 gigaReq = dict()
 daeodonReq = dict()
 
-arthroShow = [0] * 100
-gigaShow = [0] * 100
-daeodonShow = [0] * 100
-
 
 def arthro(output) :
     listlen = len(output["data"])
+    showList = [0] * 100
     howmany = [0] * 100
     passNum = 0
-    arthroShow = [0] * 100
     j=0
     for i in range(listlen):
         if str(output["data"][i][" [Arthro/古马陆]"]) == '' or 0:
@@ -42,14 +38,14 @@ def arthro(output) :
 
 
     for key, val in arthroReq.items():
-        arthroShow[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
+        showList[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
         j=j+1
 
 def giga(output) :
     listlen = len(output["data"])
+    showList = [0] * 100
     howmany = [0] * 100
     passNum = 0
-    gigaShow = [0] * 100
     j=0
     for i in range(listlen):
         if str(output["data"][i][" [Giga/南巨]"]) == '' or 0:
@@ -61,14 +57,14 @@ def giga(output) :
 
 
     for key, val in gigaReq.items():
-        gigaShow[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
+        showList[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
         j=j+1
 
 def daeodon(output) :
     listlen = len(output["data"])
     howmany = [0] * 100
+    showList = [0] * 100
     passNum = 0
-    daeodonShow = [0] * 100
     j=0
     for i in range(listlen):
         if str(output["data"][i][" [Daeodon/回血猪]"]) == '' or 0:
@@ -80,7 +76,7 @@ def daeodon(output) :
 
 
     for key, val in daeodonReq.items():
-        daeodonShow[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
+        showList[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
         j=j+1
 
 
@@ -105,17 +101,17 @@ async def on_message(message):
 
     if message.content == ';arthro':
         arthro(output)
-        await message.channel.send("```"+str(arthroShow[0])+'\n'+str(arthroShow[1])+'\n'+str(arthroShow[2])+'\n'+str(arthroShow[3])+'\n'+str(arthroShow[4])+"```")
+        await message.channel.send("```"+str(showList[0])+'\n'+str(showList[1])+'\n'+str(showList[2])+'\n'+str(showList[3])+'\n'+str(showList[4])+"```")
         return
 
     if message.content == ';giga':
         giga(output)
-        await message.channel.send("```"+gigaShow[0]+'\n'+gigaShow[1]+'\n'+gigaShow[2]+'\n'+gigaShow[3]+'\n'+gigaShow[4]+"```")
+        await message.channel.send("```"+str(showList[0])+'\n'+str(showList[1])+'\n'+str(showList[2])+'\n'+str(showList[3])+'\n'+str(showList[4])+"```")
         return
 
     if message.content == ';daeodon':
         daeodon(output)
-        await message.channel.send("```"+daeodonShow[0]+'\n'+daeodonShow[1]+'\n'+daeodonShow[2]+'\n'+daeodonShow[3]+'\n'+daeodonShow[4]+"```")
+        await message.channel.send("```"+str(showList[0])+'\n'+str(showList[1])+'\n'+str(showList[2])+'\n'+str(showList[3])+'\n'+str(showList[4])+"```")
         return     
 
 client.run(os.environ['token'])
