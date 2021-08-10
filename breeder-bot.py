@@ -10,6 +10,7 @@ import os
 
 url = 'https://script.google.com/macros/s/AKfycbwIGjc6merW4KOIh_fQ1hTOLw28nB_B0iRHiWDJG103gBskGHLVIVjb_s_YZIiPfSUW6w/exec?sheetName=request_list'
 
+global output
 output = requests.get(url).json()
 
 
@@ -99,16 +100,19 @@ async def on_message(message):
         return
 
     if message.content == ';arthro':
+        output = requests.get(url).json()
         arthro()
         await message.channel.send("```"+arthroShow[0]+'\n'+arthroShow[1]+'\n'+arthroShow[2]+'\n'+arthroShow[3]+'\n'+arthroShow[4]+"```")
         return
 
     if message.content == ';giga':
+        output = requests.get(url).json()
         giga()
         await message.channel.send("```"+gigaShow[0]+'\n'+gigaShow[1]+'\n'+gigaShow[2]+'\n'+gigaShow[3]+'\n'+gigaShow[4]+"```")
         return
 
     if message.content == ';daeodon':
+        output = requests.get(url).json()
         daeodon()
         await message.channel.send("```"+daeodonShow[0]+'\n'+daeodonShow[1]+'\n'+daeodonShow[2]+'\n'+daeodonShow[3]+'\n'+daeodonShow[4]+"```")
         return     
