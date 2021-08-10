@@ -21,16 +21,16 @@ arthroReq = dict()
 gigaReq = dict()
 daeodonReq = dict()
 
-arthroShow = [0] * 100
-gigaShow = [0] * 100
-daeodonShow = [0] * 100
+arthroShow = [''] * 100
+gigaShow = [''] * 100
+daeodonShow = [''] * 100
 
 
 def arthro(output) :
     listlen = len(output["data"])
     howmany = [0] * 100
     passNum = 0
-    arthroShow = [0] * 100
+    arthroShow = [''] * 100
     j=0
     for i in range(listlen):
         if str(output["data"][i][" [Arthro/古马陆]"]) == '' or 0:
@@ -49,7 +49,7 @@ def giga(output) :
     listlen = len(output["data"])
     howmany = [0] * 100
     passNum = 0
-    gigaShow = [0] * 100
+    gigaShow = [''] * 100
     j=0
     for i in range(listlen):
         if str(output["data"][i][" [Giga/南巨]"]) == '' or 0:
@@ -68,7 +68,7 @@ def daeodon(output) :
     listlen = len(output["data"])
     howmany = [0] * 100
     passNum = 0
-    daeodonShow = [0] * 100
+    daeodonShow = [''] * 100
     j=0
     for i in range(listlen):
         if str(output["data"][i][" [Daeodon/回血猪]"]) == '' or 0:
