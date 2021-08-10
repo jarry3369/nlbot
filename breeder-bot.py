@@ -10,11 +10,6 @@ import os
 
 url = 'https://script.google.com/macros/s/AKfycbwIGjc6merW4KOIh_fQ1hTOLw28nB_B0iRHiWDJG103gBskGHLVIVjb_s_YZIiPfSUW6w/exec?sheetName=request_list'
 
-global output
-output = requests.get(url).json()
-
-
-listlen = len(output["data"])
 global passNum
 global j
 
@@ -30,7 +25,8 @@ arthroShow = [0] * 100
 gigaShow = [0] * 100
 daeodonShow = [0] * 100
 
-def arthro() :
+def arthro(output) :
+    listlen = len(output["data"])
     howmany = [0] * 100
     passNum = 0
     j=0
@@ -47,7 +43,8 @@ def arthro() :
         arthroShow[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
         j=j+1
 
-def giga() :
+def giga(output) :
+    listlen = len(output["data"])
     howmany = [0] * 100
     passNum = 0
     j=0
@@ -64,7 +61,8 @@ def giga() :
         gigaShow[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
         j=j+1
 
-def daeodon() :
+def daeodon(output) :
+    listlen = len(output["data"])
     howmany = [0] * 100
     passNum = 0
     j=0
@@ -96,24 +94,23 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    output = requests.get(url).json()
+
     if message.author == client.user: # 봇 메시지 무시
         return
 
     if message.content == ';arthro':
-        output = requests.get(url).json()
-        arthro()
+        arthro(output)
         await message.channel.send("```"+arthroShow[0]+'\n'+arthroShow[1]+'\n'+arthroShow[2]+'\n'+arthroShow[3]+'\n'+arthroShow[4]+"```")
         return
 
     if message.content == ';giga':
-        output = requests.get(url).json()
-        giga()
+        giga(output)
         await message.channel.send("```"+gigaShow[0]+'\n'+gigaShow[1]+'\n'+gigaShow[2]+'\n'+gigaShow[3]+'\n'+gigaShow[4]+"```")
         return
 
     if message.content == ';daeodon':
-        output = requests.get(url).json()
-        daeodon()
+        daeodon(output)
         await message.channel.send("```"+daeodonShow[0]+'\n'+daeodonShow[1]+'\n'+daeodonShow[2]+'\n'+daeodonShow[3]+'\n'+daeodonShow[4]+"```")
         return     
 
