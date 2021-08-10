@@ -21,19 +21,19 @@ arthroReq = dict()
 gigaReq = dict()
 daeodonReq = dict()
 
-arthroShow = ['0'] * 100
-gigaShow = ['0'] * 100
-daeodonShow = ['0'] * 100
+arthroShow = [0] * 100
+gigaShow = [0] * 100
+daeodonShow = [0] * 100
 
 
 def arthro(output) :
     listlen = len(output["data"])
     howmany = [0] * 100
     passNum = 0
-    arthroShow = ['0'] * 100
+    arthroShow = [0] * 100
     j=0
     for i in range(listlen):
-        if str(output["data"][i][" [Arthro/古马陆]"]) == '' or "0":
+        if str(output["data"][i][" [Arthro/古马陆]"]) == '' or 0:
             passNum = passNum+1
             continue
         else:
@@ -42,17 +42,17 @@ def arthro(output) :
 
 
     for key, val in arthroReq.items():
-        arthroShow[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
+        arthroShow[j] = str("Name: "+key+"\n"+"Quantity: "+val+"\n")
         j=j+1
 
 def giga(output) :
     listlen = len(output["data"])
     howmany = [0] * 100
     passNum = 0
-    gigaShow = ['0'] * 100
+    gigaShow = [0] * 100
     j=0
     for i in range(listlen):
-        if str(output["data"][i][" [Giga/南巨]"]) == '' or "0":
+        if str(output["data"][i][" [Giga/南巨]"]) == '' or 0:
             passNum = passNum+1
             continue
         else:
@@ -61,17 +61,17 @@ def giga(output) :
 
 
     for key, val in gigaReq.items():
-        gigaShow[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
+        gigaShow[j] = str("Name: "+key+"\n"+"Quantity: "+val+"\n")
         j=j+1
 
 def daeodon(output) :
     listlen = len(output["data"])
     howmany = [0] * 100
     passNum = 0
-    daeodonShow = ['0'] * 100
+    daeodonShow = [0] * 100
     j=0
     for i in range(listlen):
-        if str(output["data"][i][" [Daeodon/回血猪]"]) == '' or "0":
+        if str(output["data"][i][" [Daeodon/回血猪]"]) == '' or 0:
             passNum = passNum+1
             continue
         else:
@@ -80,7 +80,7 @@ def daeodon(output) :
 
 
     for key, val in daeodonReq.items():
-        daeodonShow[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
+        daeodonShow[j] = str("Name: "+key+"\n"+"Quantity: "+val+"\n")
         j=j+1
 
 
