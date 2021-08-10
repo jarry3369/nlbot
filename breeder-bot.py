@@ -21,9 +21,9 @@ arthroReq = dict()
 gigaReq = dict()
 daeodonReq = dict()
 
-arthroShow = []
-gigaShow = []
-daeodonShow = []
+arthroShow = [0] * 100
+gigaShow = [0] * 100
+daeodonShow = [0] * 100
 
 
 def arthro(output) :
