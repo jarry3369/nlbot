@@ -21,6 +21,10 @@ arthroReq = dict()
 gigaReq = dict()
 daeodonReq = dict()
 
+arthroShow = []
+gigaShow = []
+daeodonShow = []
+
 
 def arthro(output) :
     listlen = len(output["data"])
