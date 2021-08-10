@@ -39,6 +39,7 @@ def arthro(output) :
 
     for key, val in arthroReq.items():
         showList[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
+        print(showList[1])
         j=j+1
 
 def giga(output) :
