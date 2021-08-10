@@ -16,16 +16,12 @@ global j
 
 howmany = [0] * 100
 
-
-arthroReq = dict()
-gigaReq = dict()
-daeodonReq = dict()
-
 arthroShow = [0] * 100
 gigaShow = [0] * 100
 daeodonShow = [0] * 100
 
 def arthro(output) :
+    arthroReq = dict()
     listlen = len(output["data"])
     howmany = [0] * 100
     passNum = 0
@@ -44,6 +40,7 @@ def arthro(output) :
         j=j+1
 
 def giga(output) :
+    gigaReq = dict()
     listlen = len(output["data"])
     howmany = [0] * 100
     passNum = 0
@@ -62,6 +59,7 @@ def giga(output) :
         j=j+1
 
 def daeodon(output) :
+    daeodonReq = dict()
     listlen = len(output["data"])
     howmany = [0] * 100
     passNum = 0
