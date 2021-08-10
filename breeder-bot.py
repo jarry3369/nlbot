@@ -42,7 +42,7 @@ def arthro(output) :
 
 
     for key, val in arthroReq.items():
-        arthroShow[j] = str("Name: "+key+"\n"+"Quantity: "+val+"\n")
+        arthroShow[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
         j=j+1
 
 def giga(output) :
@@ -61,7 +61,7 @@ def giga(output) :
 
 
     for key, val in gigaReq.items():
-        gigaShow[j] = str("Name: "+key+"\n"+"Quantity: "+val+"\n")
+        gigaShow[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
         j=j+1
 
 def daeodon(output) :
@@ -80,7 +80,7 @@ def daeodon(output) :
 
 
     for key, val in daeodonReq.items():
-        daeodonShow[j] = str("Name: "+key+"\n"+"Quantity: "+val+"\n")
+        daeodonShow[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
         j=j+1
 
 
@@ -105,7 +105,7 @@ async def on_message(message):
 
     if message.content == ';arthro':
         arthro(output)
-        await message.channel.send("```"+arthroShow[0]+'\n'+arthroShow[1]+'\n'+arthroShow[2]+'\n'+arthroShow[3]+'\n'+arthroShow[4]+"```")
+        await message.channel.send("```"+str(arthroShow[0])+'\n'+str(arthroShow[1])+'\n'+str(arthroShow[2])+'\n'+str(arthroShow[3])+'\n'+str(arthroShow[4])+"```")
         return
 
     if message.content == ';giga':
