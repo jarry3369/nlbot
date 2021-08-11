@@ -51,7 +51,7 @@ def checkList(output,dino) :
 
 
     for key, val in req.items():
-        show[j] = platInfo[j]+" : "+idInfo[j]+"\n"+"Name: "+key+"\n"+"Quantity: "+val+"\n"
+        show.append(platInfo[j]+" : "+idInfo[j]+"\n"+"Name: "+key+"\n"+"Quantity: "+val+"\n")
         j=j+1
 
 
