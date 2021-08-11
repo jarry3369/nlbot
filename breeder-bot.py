@@ -43,12 +43,9 @@ def checkList(output,dino) :
             continue
         else:
             howmany[i-passNum] = str(output["data"][i][dino])
-            print("this is howmany :  "+str(howmany[i])+"\n")
             req[str(output["data"][i][ingame])] = howmany[i-passNum]
-            platInfo[i] = str(output["data"][i][platform])
-            print("this is palt :  "+str(platInfo[i])+"\n")
-            idInfo[i] = str(output["data"][i][plat_id])
-            print("this is id :  "+str(idInfo[i])+"\n")
+            platInfo[i-passNum] = str(output["data"][i][platform])
+            idInfo[i-passNum] = str(output["data"][i][plat_id])
 
 
 
