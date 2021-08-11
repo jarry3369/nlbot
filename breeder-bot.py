@@ -44,14 +44,18 @@ def checkList(output,dino) :
             continue
         else:
             howmany.append(str(output["data"][i][dino]))
+            print(howmany[i])
             req[str(output["data"][i][ingame])] = howmany[i-passNum]
             platInfo.append(str(output["data"][i][platform]))
+            print(platInfo[i])
             idInfo.append(str(output["data"][i][plat_id]))
+            print(idInfo[i])
 
 
 
     for key, val in req.items():
         show.append(platInfo[j]+" : "+idInfo[j]+"\n"+"Name: "+key+"\n"+"Quantity: "+val+"\n")
+        print(show[j])
         j=j+1
 
 
