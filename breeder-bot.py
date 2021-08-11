@@ -35,8 +35,11 @@ def checkList(output,dino) :
     platInfo = [0] * 100
     idInfo = [0] * 100
 
+    print("this is dino :  "+dino+"\n")
+
     j=0
     for i in range(listlen):
+        print(exec("%s = %s" % (dino,dino)))
         if str(output["data"][i][exec("%s = %s" % (dino,dino))]) == '' or 0:
             passNum = passNum+1
             continue
