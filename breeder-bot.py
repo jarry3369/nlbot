@@ -78,9 +78,9 @@ async def on_message(message):
             checkList(output,dino)
             await message.channel.send("it's about top 10\n"+show[0])
             return
-        if message[:-2] == '-a':
-            await message.channel.send("it's about all list")
-            return
+        # if message[:-2] == '-a':
+        #     await message.channel.send("it's about all list")
+        #     return
 
 
 client.run(os.environ['token'])
