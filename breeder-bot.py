@@ -43,10 +43,10 @@ def checkList(output,dino) :
             passNum = passNum+1
             continue
         else:
-            howmany[i-passNum] = str(output["data"][i][dino])
+            howmany.append(str(output["data"][i][dino]))
             req[str(output["data"][i][ingame])] = howmany[i-passNum]
-            platInfo[i] = str(output["data"][i][platform])
-            idInfo[i] = str(output["data"][i][plat_id])
+            platInfo.append(str(output["data"][i][platform]))
+            idInfo.append(str(output["data"][i][plat_id]))
 
 
 
