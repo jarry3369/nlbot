@@ -50,7 +50,7 @@ def checkList(output,dino) :
 
 
     for key, val in req.items():
-        show[j] = str(platInfo[j])+" : "+str(idInfo[j])+"\n"+"Name: "+key+"\n"+"Quantity: "+val+"\n"
+        show[j] = str(platInfo[j])+" : "+str(idInfo[j])+"\n"+"Name: "+key+"\n"+"Quantity: "+val+"\n\n"
         print("this is output :  "+str(show[j])+"\n")
         j=j+1
 
@@ -77,7 +77,7 @@ async def on_message(message):
     if message.content.startswith(';arthro'):
         checkList(output,arthro)
         if message.content == ';arthro':
-            await message.channel.send("```"+"it's about top 10\n"+str(show[0])+str(show[1])+str(show[2])+str(show[3])+"```")
+            await message.channel.send("```"+"**"+arthro+"**\n\n"+str(show[0])+str(show[1])+str(show[2])+str(show[3])+"```")
             return
         # if message.content[:-2] == '-a':
         #     await message.channel.send("it's about all list")
