@@ -21,8 +21,8 @@ ingame = "INGAME NAME"
 arthro = " [Arthro/古马陆]"
 
 
-howmany = [0] * 300
-
+howmany = []
+show = []
 
 def checkList(output,dino) :
     req = dict()
