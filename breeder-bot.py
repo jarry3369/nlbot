@@ -23,8 +23,6 @@ arthro = " [Arthro/古马陆]"
 
 howmany = [0] * 300
 
-show = [0] * 300
-
 
 def checkList(output,dino) :
     req = dict()
@@ -57,6 +55,8 @@ def checkList(output,dino) :
         show[j] = str(platInfo[j])+" : "+str(idInfo[j])+"\n"+"Name: "+key+"\n"+"Quantity: "+val+"\n"
         print("this is output :  "+str(show[j])+"\n")
         j=j+1
+
+    return show = show
 
 
 
