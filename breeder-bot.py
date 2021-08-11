@@ -13,6 +13,10 @@ url = 'https://script.google.com/macros/s/AKfycbwIGjc6merW4KOIh_fQ1hTOLw28nB_B0i
 global passNum
 global j
 
+global show
+global howmany
+
+
 platform = "Discord / Wechat"
 plat_id = "Discord ID or WeChat ID"
 ingame = "INGAME NAME"
@@ -21,8 +25,6 @@ ingame = "INGAME NAME"
 arthro = " [Arthro/古马陆]"
 
 
-howmany = []
-show = []
 
 def checkList(output,dino) :
     req = dict()
