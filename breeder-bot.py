@@ -44,18 +44,18 @@ def checkList(output,dino) :
             continue
         else:
             howmany[i-passNum] = str(output["data"][i][dino])
-            print("this is howmany :  "+howmany[i]+"\n")
+            print("this is howmany :  "+str(howmany[i])+"\n")
             req[str(output["data"][i][ingame])] = howmany[i-passNum]
             platInfo[i] = str(output["data"][i][platform])
-            print("this is palt :  "+platInfo[i]+"\n")
+            print("this is palt :  "+str(platInfo[i])+"\n")
             idInfo[i] = str(output["data"][i][plat_id])
-            print("this is id :  "+idInfo[i]+"\n")
+            print("this is id :  "+str(idInfo[i])+"\n")
 
 
 
     for key, val in req.items():
         show[j] = platInfo[j]+" : "+idInfo[j]+"\n"+"Name: "+key+"\n"+"Quantity: "+val+"\n"
-        print("this is output :  "+show[j]+"\n")
+        print("this is output :  "+str(show[j])+"\n")
         j=j+1
 
 
@@ -81,7 +81,7 @@ async def on_message(message):
     if message.content.startswith(';arthro'):
         checkList(output,arthro)
         if message.content == ';arthro':
-            await message.channel.send("it's about top 10\n"+show[0])
+            await message.channel.send("it's about top 10\n"+str(show[0]))
             return
         # if message.content[:-2] == '-a':
         #     await message.channel.send("it's about all list")
