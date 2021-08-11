@@ -13,70 +13,44 @@ url = 'https://script.google.com/macros/s/AKfycbwIGjc6merW4KOIh_fQ1hTOLw28nB_B0i
 global passNum
 global j
 
+platform = "Discord / Wechat"
+plat_id = "Discord ID or WeChat ID"
+ingame = "INGAME NAME"
+
+
+arthro = " [Arthro/古马陆]"
+
 
 howmany = [0] * 100
 
-arthroShow = [0] * 100
-gigaShow = [0] * 100
-daeodonShow = [0] * 100
+show = [0] * 100
 
-def arthro(output) :
-    arthroReq = dict()
+
+def checkList(output,dino) :
+    req = dict()
     listlen = len(output["data"])
     howmany = [0] * 100
+    show = [0] * 100
     passNum = 0
+    platInfo = [0] * 100
+    idInfo = [0] * 100
+
     j=0
     for i in range(listlen):
-        if str(output["data"][i][" [Arthro/古马陆]"]) == '' or 0:
+        if str(output["data"][i][exec("%s = %s" % (dino,dino))]) == '' or 0:
             passNum = passNum+1
             continue
         else:
-            howmany[i-passNum] = str(output["data"][i][" [Arthro/古马陆]"])
-            arthroReq[str(output["data"][i]["DISCORD ID / INGAME NAME / Main Server"])] = howmany[i-passNum]
+            howmany[i-passNum] = str(output["data"][i][exec("%s = %s" % (dino,dino))])
+            req[str(output["data"][i][ingame])] = howmany[i-passNum]
+            platInfo[i] = str(output["data"][i][platform])
+            idInfo[i] = str(output["data"][i][plat_id])
 
 
-    for key, val in arthroReq.items():
-        arthroShow[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
+
+    for key, val in req.items():
+        show[j] = platInfo[j]+" : "+idInfo[j]+"\n"+"Name: "+key+"\n"+"Quantity: "+val+"\n"
         j=j+1
-
-def giga(output) :
-    gigaReq = dict()
-    listlen = len(output["data"])
-    howmany = [0] * 100
-    passNum = 0
-    j=0
-    for i in range(listlen):
-        if str(output["data"][i][" [Giga/南巨]"]) == '' or 0:
-            passNum = passNum+1
-            continue
-        else:
-            howmany[i-passNum] = str(output["data"][i][" [Giga/南巨]"])
-            gigaReq[str(output["data"][i]["DISCORD ID / INGAME NAME / Main Server"])] = howmany[i-passNum]
-
-
-    for key, val in gigaReq.items():
-        gigaShow[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
-        j=j+1
-
-def daeodon(output) :
-    daeodonReq = dict()
-    listlen = len(output["data"])
-    howmany = [0] * 100
-    passNum = 0
-    j=0
-    for i in range(listlen):
-        if str(output["data"][i][" [Daeodon/回血猪]"]) == '' or 0:
-            passNum = passNum+1
-            continue
-        else:
-            howmany[i-passNum] = str(output["data"][i][" [Daeodon/回血猪]"])
-            daeodonReq[str(output["data"][i]["DISCORD ID / INGAME NAME / Main Server"])] = howmany[i-passNum]
-
-
-    for key, val in daeodonReq.items():
-        daeodonShow[j] = "Name: "+key+"\n"+"Quantity: "+val+"\n"
-        j=j+1
-
 
 
 
@@ -97,19 +71,17 @@ async def on_message(message):
     if message.author == client.user: # 봇 메시지 무시
         return
 
-    if message.content == ';arthro':
-        arthro(output)
-        await message.channel.send("```"+arthroShow[0]+'\n'+arthroShow[1]+'\n'+arthroShow[2]+'\n'+arthroShow[3]+'\n'+arthroShow[4]+"```")
-        return
 
-    if message.content == ';giga':
-        giga(output)
-        await message.channel.send("```"+gigaShow[0]+'\n'+gigaShow[1]+'\n'+gigaShow[2]+'\n'+gigaShow[3]+'\n'+gigaShow[4]+"```")
-        return
+    if message.content.startswith(';arthro'):
+        if message.content == ';arthro':
+            dino = message[1:]
+            checkList(output,dino)
+            await message.channel.send("it's about top 10\n"+show[0])
+            return
+        if message[:-2] == '-a':
+            await message.channel.send("it's about all list")
+            return
 
-    if message.content == ';daeodon':
-        daeodon(output)
-        await message.channel.send("```"+daeodonShow[0]+'\n'+daeodonShow[1]+'\n'+daeodonShow[2]+'\n'+daeodonShow[3]+'\n'+daeodonShow[4]+"```")
-        return     
 
 client.run(os.environ['token'])
+#"```"+arthroShow[0]+'\n'+arthroShow[1]+'\n'+arthroShow[2]+'\n'+arthroShow[3]+'\n'+arthroShow[4]+"```"
