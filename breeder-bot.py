@@ -43,7 +43,7 @@ def checkList(output,dino) :
             passNum = passNum+1
             continue
         else:
-            howmany[i-passNum] = str(output["data"][i][exec("%s = %s" % (dino,dino))])
+            howmany[i-passNum] = str(output["data"][i][dino])
             req[str(output["data"][i][ingame])] = howmany[i-passNum]
             platInfo[i] = str(output["data"][i][platform])
             idInfo[i] = str(output["data"][i][plat_id])
@@ -75,12 +75,11 @@ async def on_message(message):
 
 
     if message.content.startswith(';arthro'):
+        checkList(output,arthro)
         if message.content == ';arthro':
-            dino = message.content[1:]
-            checkList(output,arthro)
             await message.channel.send("it's about top 10\n"+show[0])
             return
-        # if message[:-2] == '-a':
+        # if message.content[:-2] == '-a':
         #     await message.channel.send("it's about all list")
         #     return
 
