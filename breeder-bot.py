@@ -21,19 +21,19 @@ ingame = "INGAME NAME"
 arthro = " [Arthro/古马陆]"
 
 
-howmany = [0] * 100
+howmany = []
 
-show = [0] * 100
+show = []
 
 
 def checkList(output,dino) :
     req = dict()
     listlen = len(output["data"])
-    howmany = [0] * 100
-    show = [0] * 100
+    howmany = []
+    show = []
     passNum = 0
-    platInfo = [0] * 100
-    idInfo = [0] * 100
+    platInfo = []
+    idInfo = []
 
     print("this is dino :  "+dino+"\n")
 
