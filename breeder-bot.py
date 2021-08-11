@@ -56,8 +56,6 @@ def checkList(output,dino) :
         print("this is output :  "+str(show[j])+"\n")
         j=j+1
 
-    return show = show
-
 
 
 client = discord.Client()
