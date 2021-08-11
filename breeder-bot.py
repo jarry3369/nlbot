@@ -74,7 +74,7 @@ async def on_message(message):
 
     if message.content.startswith(';arthro'):
         if message.content == ';arthro':
-            dino = message[1:]
+            dino = message.content[1:]
             checkList(output,dino)
             await message.channel.send("it's about top 10\n"+show[0])
             return
