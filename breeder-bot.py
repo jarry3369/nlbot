@@ -21,19 +21,19 @@ ingame = "INGAME NAME"
 arthro = " [Arthro/古马陆]"
 
 
-howmany = []
+howmany = [0] * 300
 
-show = []
+show = [0] * 300
 
 
 def checkList(output,dino) :
     req = dict()
     listlen = len(output["data"])
-    howmany = []
-    show = []
+    howmany = [0] * 300
+    show = [0] * 300
     passNum = 0
-    platInfo = []
-    idInfo = []
+    platInfo = [0] * 300
+    idInfo = [0] * 300
 
     print("this is dino :  "+dino+"\n")
 
@@ -43,19 +43,19 @@ def checkList(output,dino) :
             passNum = passNum+1
             continue
         else:
-            howmany.append(str(output["data"][i][dino]))
-            print(howmany[i])
+            howmany[i-passNum] = str(output["data"][i][dino])
+            print("this is howmany :  "+howmany[i]+"\n")
             req[str(output["data"][i][ingame])] = howmany[i-passNum]
-            platInfo.append(str(output["data"][i][platform]))
-            print(platInfo[i])
-            idInfo.append(str(output["data"][i][plat_id]))
-            print(idInfo[i])
+            platInfo[i] = str(output["data"][i][platform])
+            print("this is palt :  "+platInfo[i]+"\n")
+            idInfo[i] = str(output["data"][i][plat_id])
+            print("this is id :  "+idInfo[i]+"\n")
 
 
 
     for key, val in req.items():
-        show.append(platInfo[j]+" : "+idInfo[j]+"\n"+"Name: "+key+"\n"+"Quantity: "+val+"\n")
-        print(show[j])
+        show[j] = platInfo[j]+" : "+idInfo[j]+"\n"+"Name: "+key+"\n"+"Quantity: "+val+"\n"
+        print("this is output :  "+show[j]+"\n")
         j=j+1
 
 
@@ -81,7 +81,7 @@ async def on_message(message):
     if message.content.startswith(';arthro'):
         checkList(output,arthro)
         if message.content == ';arthro':
-            await message.channel.send("it's about top 10\n"+str(show))
+            await message.channel.send("it's about top 10\n"+show[0])
             return
         # if message.content[:-2] == '-a':
         #     await message.channel.send("it's about all list")
