@@ -78,7 +78,7 @@ async def on_message(message):
         return
 
     if message.content == ';밥':
-        await client.channel.send(menu+"ㄱㄱㄱ")
+        await message.channel.send(menu+"ㄱㄱㄱ")
 
     if message.content.startswith(';arthro'):
         checkList(output,arthro)
