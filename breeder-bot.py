@@ -86,11 +86,12 @@ async def on_message(message):
     if message.content == ';밥':
         await message.channel.send(menu+"ㄱㄱㄱ")
     
-    while not client.is_closed():
-        msg = await message.ch.send(patchOut)
-        while 1:
-            await asyncio.sleep(60)
-            await msg.edit(patchOut)
+    if message.content == ";stream":
+        while not client.is_closed():
+            msg = await message.ch.send(patchOut)
+            while 1:
+                await asyncio.sleep(60)
+                await msg.edit(patchOut)
 
     # if message.content.startswith(';arthro'):
     #     checkList(output,arthro)
