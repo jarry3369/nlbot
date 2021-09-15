@@ -8,13 +8,18 @@ from requests.sessions import Request
 import os
 import random
 import asyncio
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+
+
+html = urlopen("http://arkdedicated.com/dynamicconfig.ini")
+bsObject = BeautifulSoup(html, "html.parser")
+
+print (bsObject.head.find("pre").get('content'))
 
 
 url = 'https://script.google.com/macros/s/AKfycbwIGjc6merW4KOIh_fQ1hTOLw28nB_B0iRHiWDJG103gBskGHLVIVjb_s_YZIiPfSUW6w/exec?sheetName=requestList'
-patchNote = 'http://arkdedicated.com/dynamicconfig.ini'
 
-
-patchOut = requests.get(patchNote)
 
 global passNum
 global j
@@ -86,13 +91,13 @@ async def on_message(message):
     if message.content == ';밥':
         await message.channel.send(menu+"ㄱㄱㄱ")
     
-    if message.content == ";stream":
-        await message.channel.send("stream yes")
-        while not client.is_closed():
-            msg = await message.channel.send(patchOut)
-            while 1:
-                await asyncio.sleep(60)
-                await msg.edit(patchOut)
+    # if message.content == ";stream":
+    #     await message.channel.send("stream yes")
+    #     while not client.is_closed():
+    #         msg = await message.channel.send(patchOut)
+    #         while 1:
+    #             await asyncio.sleep(60)
+    #             await msg.edit(patchOut)
 
     # if message.content.startswith(';arthro'):
     #     checkList(output,arthro)
