@@ -7,6 +7,7 @@ from requests.api import request
 from requests.sessions import Request
 import os
 import random
+import asyncio
 
 
 url = 'https://script.google.com/macros/s/AKfycbwIGjc6merW4KOIh_fQ1hTOLw28nB_B0iRHiWDJG103gBskGHLVIVjb_s_YZIiPfSUW6w/exec?sheetName=requestList'
@@ -71,14 +72,14 @@ async def on_ready():
     print('We have logged in as {0.user}'.format(client)) #실행 콘솔로그
     await patchLog()
 
-async def patchLog():
+async def patchLog(message):
     await client.wait_until_ready()
     ch = client.get_channel('chanID')
 
     while not client.is_closed():
         while 1:
-            await client.message.ch.send(patchOut)
-            await client.asyncio.sleep(60)
+            await message.ch.send(patchOut)
+            await asyncio.sleep(60)
 
 
 @client.event
