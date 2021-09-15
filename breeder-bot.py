@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 html = urlopen("http://arkdedicated.com/dynamicconfig.ini")
 bsObject = BeautifulSoup(html, "html.parser")
 
-print (bsObject.head.find("pre").get('content'))
+print (bsObject.head.find("pre",).get('content'))
 
 
 url = 'https://script.google.com/macros/s/AKfycbwIGjc6merW4KOIh_fQ1hTOLw28nB_B0iRHiWDJG103gBskGHLVIVjb_s_YZIiPfSUW6w/exec?sheetName=requestList'
