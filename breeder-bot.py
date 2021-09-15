@@ -87,8 +87,9 @@ async def on_message(message):
         await message.channel.send(menu+"ㄱㄱㄱ")
     
     if message.content == ";stream":
+        await message.channel.send("stream yes")
         while not client.is_closed():
-            msg = await message.ch.send(patchOut)
+            msg = await message.channel.send(patchOut)
             while 1:
                 await asyncio.sleep(60)
                 await msg.edit(patchOut)
