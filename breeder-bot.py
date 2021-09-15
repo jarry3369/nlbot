@@ -73,7 +73,7 @@ async def on_ready():
 
 async def patchLog():
     await client.wait_until_ready()
-    ch = client.get_channel(chanID)
+    ch = client.get_channel('chanID')
 
     while not client.is_closed():
         while 1:
