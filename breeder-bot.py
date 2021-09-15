@@ -83,9 +83,9 @@ async def on_message(message):
     if message.content == ';밥':
         await message.channel.send(menu+"ㄱㄱㄱ")
 
-    ch = client.get_channel(channel)
-    await ch.delete()
-    await ch.send ('on test...\n'+patchOut)
+    ch = client.get_channel(chanID)
+    await message.ch.purge
+    await message.ch.send ('on test...\n'+patchOut)
 
     # if message.content.startswith(';arthro'):
     #     checkList(output,arthro)
